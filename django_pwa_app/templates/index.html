@@ -1,0 +1,56 @@
+{% load webpack_loader %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Index</title>
+
+  <link rel="shortcut icon" href="/static/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/static/assets/favicon-48x48.png">
+  <link rel="manifest" href="/static/assets/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#fff">
+  <meta name="application-name" content="AccordBox">
+  <link rel="apple-touch-icon" sizes="57x57" href="/static/assets/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/static/assets/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/static/assets/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/static/assets/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/static/assets/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/static/assets/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/static/assets/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/static/assets/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="/static/assets/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="/static/assets/apple-touch-icon-1024x1024.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AccordBox">
+
+  {% stylesheet_pack 'app' %}
+</head>
+<body>
+
+<div class="bg-light py-5">
+  <div class="container">
+    <h1 class="display-3">Hello, world!</h1>
+    <p>This tutorial tutorial series will teach you how to bring PWA to Django</p>
+    <a class="btn btn-primary btn-lg d-none" href="#" role="button" id="installButton">Install PWA</a>
+    <a class="btn btn-success btn-lg d-none" href="#" role="button" id="triggerNotificationButton">Send Web Push Notification</a>
+  </div>
+</div>
+
+<script>
+  window.WEB_PUSH_CFG = {
+    APPLICATION_SERVER_KEY: "{{ APPLICATION_SERVER_KEY }}",
+    CREATE_WP_SUBSCRIPTION: "{% url 'create-wp-subscription' %}",
+    SEND_NOTIFICATION: "{% url 'send_notification' %}",
+  };
+</script>
+
+{% javascript_pack 'app' %}
+
+</body>
+</html>

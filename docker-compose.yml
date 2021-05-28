@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: django_pwa_web
+    command: /start
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    stdin_open: true
+    tty: true
+    env_file:
+      - ./.env/.dev-sample
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=django_dev
+      - POSTGRES_USER=django_dev
+      - POSTGRES_PASSWORD=django_dev
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./compose/local/node/Dockerfile
+    image: django_pwa_frontend
+    command: npm run start
+    volumes:
+      - .:/app
+      # http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html
+      - /app/frontend/node_modules
+    ports:
+      - 9091:9091
+
+volumes:
+  postgres_data:
