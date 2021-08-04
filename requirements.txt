@@ -4,5 +4,5 @@ djangorestframework==3.12.4
 django-push-notifications==2.0.0
 py-vapid==1.8.2
 
-psycopg2-binary
+psycopg2-binary==2.8.6
 
