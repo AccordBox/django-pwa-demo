@@ -2,8 +2,6 @@
 
 ## Introduction
 
-[Django PWA Tutorial](https://www.accordbox.com/blog/django-pwa-tutorial/)
-
 This project will teach you, how to use the **mordern frontend tech** to add (Progressive Web App) features to Django.
 
 Features:
@@ -13,6 +11,8 @@ Features:
 1. Precaching static assets.
 1. Install PWA.
 1. Web Push Notification.
+
+You can also check [Django PWA Tutorial Series](https://www.accordbox.com/blog/django-pwa-tutorial/) to learn more.
 
 ## Run on local
 
