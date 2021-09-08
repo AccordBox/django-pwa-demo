@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project will teach you, how to use the **mordern frontend tech** to add (Progressive Web App) features to Django.
+This project will teach you how to use **modern frontend tech** to add PWA (Progressive Web App) features to Django.
 
 Features:
 
@@ -87,7 +87,7 @@ PUSH_NOTIFICATIONS_SETTINGS = {
 }
 ```
 
-If you have no nodejs installed, please install it first by using below links
+If you don't have nodejs installed, please install it first by using below links
 
 1. On [nodejs homepage](https://nodejs.org/en/download/)
 1. Using [nvm](https://github.com/nvm-sh/nvm) I recommend this way.
