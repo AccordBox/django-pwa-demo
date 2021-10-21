@@ -1,5 +1,5 @@
 Django==3.2
-python-webpack-boilerplate
+python-webpack-boilerplate==0.0.4
 djangorestframework==3.12.4
 django-push-notifications==2.0.0
 py-vapid==1.8.2
